@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Buy
+{% endblock %}
+
+{% block main %}
+    <form action="/buy" method="POST">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control-lg" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="form-control-lg" name="shares" placeholder="Number of shares" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit" formaction="/get_price">GET PRICE</button>
+        <button class="btn btn-primary" type="submit">BUY</button>
+    </form>
+
+    <div class="tb-container">
+        <table class="center left">
+            <tr>
+                <td>Ticker:</td>
+                <td>{{data["symbol"]}}</td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td>{{data["price"]}}</td>
+            </tr>
+            <tr>
+                <td>Shares:</td>
+                <td>{{shares}}</td>
+            </tr>
+            <tr>
+                <td>Total:</td>
+                <td>{{(data["price"] * shares|float)|round(2, 'floor')}}</td>
+            </tr>
+            <tr>
+                <td>Cash Avalible:</td>
+                <td>{{cash|round(2)}}</td>
+            </tr>
+        </table>
+    </div>
+{% endblock %}

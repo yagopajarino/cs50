@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: sorted - n, reversed and random n^2
+
+sort2 uses: Merge sort
+
+How do you know?: sorted, reversed, random - the lowest time off the three
+
+sort3 uses: selection
+
+How do you know?: in all equals times

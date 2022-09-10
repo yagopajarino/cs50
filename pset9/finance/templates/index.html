@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote stock
+{% endblock %}
+
+{% block main %}
+    <div class="tb-container">
+      <h2>Portfolio</h2>
+      <table class="table table-sm table-hover text-left">
+        <thead>
+          <tr>
+            <th scope="col">Ticker</th>
+            <th scope="col">Name</th>
+            <th scope="col">Shares</th>
+            <th scope="col">Price</th>
+            <th scope="col">Market Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in tickers %}
+            <tr>
+              <td>{{ row["symbol"]|upper }}</td>
+              <td>{{ row["name"] }}</td>
+              <td>{{ row["shares"] }}</td>
+              <td>{{ row["f_price"] }}</td>
+              <td>{{ row["mkt_value"] }}</td>
+            </tr>
+          {% endfor %}
+            <tr>
+              <td colspan=4>CASH</td>
+              <td>{{ cash }}</td>
+            </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan=4></td>
+            <td>{{ balance }}</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <div class="container">
+        <h2>Operations</h2>
+        <table class="table table-sm table-hover">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Date</th>
+              <th scope="col">Operation</th>
+              <th scope="col">Ticker</th>
+              <th scope="col">Shares</th>
+              <th scope="col">Price</th>
+              <th scope="col">Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+
+            {% for row in operations %}
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td>{{row["date"]}}</td>
+                    <td>{{row["operation"]|upper}}</td>
+                    <td>{{row["symbol"]|upper}}</td>
+                    <td>{{row["shares"]}}</td>
+                    <td>{{row["proce"]}}</td>
+                    <td>{{row["amount"]}}</td>
+                </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+    </div>
+{% endblock %}

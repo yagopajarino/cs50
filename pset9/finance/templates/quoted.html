@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    {{ symbol }}
+{% endblock %}
+
+{% block main %}
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ data["symbol"] }}</td>
+                <td>{{ data["name"] }}</td>
+                <td>{{ data["price"] }}</td>
+            </tr>
+      </tbody>
+    </table>
+
+{% endblock %}
